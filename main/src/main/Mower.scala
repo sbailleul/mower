@@ -3,11 +3,9 @@ package main
 
 import main.Action.Action
 
-import com.sun.java.accessibility.util.Translator
-
 import scala.collection.immutable.Queue
 
-class Mower(actions: Queue[Action], positionActuators: Map[Action, PositionActuator], position: Position) {
+case class Mower(actions: Queue[Action], positionActuators: Map[Action, PositionActuator], position: Position) {
   private var _position = position
 
   def hasFinish: Boolean = actions.nonEmpty
